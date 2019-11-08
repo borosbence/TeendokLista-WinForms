@@ -145,10 +145,10 @@
   <ItemGroup>
     <Content Include="Database\init.sql" />
     <Content Include="Database\TeendokDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Database\TeendokDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>TeendokDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="Models\TeendokModel.Context.tt">

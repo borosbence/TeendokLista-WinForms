@@ -28,18 +28,21 @@ namespace TeendokLista.Views
             presenter = new TeendokListaPresenter(this);
         }
 
-        public IList<Feladat> feladatLista 
+        public IList<Feladat> feladatLista
         {
-            get => (List<Feladat>) checkedListBox1.DataSource;
+            get => (List<Feladat>)checkedListBox1.DataSource;
             set
             {
+                checkedListBox1.DataSource = value;
+                checkedListBox1.DisplayMember = "Cim";
+                checkedListBox1.ValueMember = "Id";
                 for (int i = 0; i < value.Count; i++)
                 {
-                    checkedListBox1.Items.Add(value[i].Cim, value[i].Teljesitve);
+                    if (value[i].Teljesitve)
+                    {
+                        checkedListBox1.SetItemChecked(i, true);
+                    }
                 }
-                //checkedListBox1.DataSource = value;
-                //checkedListBox1.DisplayMember = "Cim";
-                //checkedListBox1.ValueMember = "Id";
             }
         }
 
@@ -68,14 +71,16 @@ namespace TeendokLista.Views
         {
             if (!loading)
             {
-                MessageBox.Show(e.NewValue.ToString());
+                bool allapot = e.NewValue == CheckState.Checked ? true : false;
+                var feladat = (Feladat)checkedListBox1.Items[e.Index];
+                presenter.CheckFeladat(feladat, allapot);
             }
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var feladat = checkedListBox1.SelectedIndex;
-            presenter.GetFeladat(feladat);
+            var index = checkedListBox1.SelectedIndex;
+            presenter.GetFeladat(index);
         }
     }
 }

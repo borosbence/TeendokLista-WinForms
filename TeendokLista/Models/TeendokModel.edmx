@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Cim" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Szoveg" Type="nvarchar" MaxLength="255" />
           <Property Name="LetrehozasDatum" Type="date" Nullable="false" />
@@ -26,7 +26,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Cim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Szoveg" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="LetrehozasDatum" Type="DateTime" Nullable="false" Precision="0" />
@@ -40,7 +40,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TeendokDatabaseModelStoreContainer" CdmEntityContainer="TeendokContext">
+        <EntityContainerMapping CdmEntityContainer="TeendokContext" StorageEntityContainer="TeendokDatabaseModelStoreContainer">
           <EntitySetMapping Name="Feladat">
             <EntityTypeMapping TypeName="TeendokDatabaseModel.Feladat">
               <MappingFragment StoreEntitySet="Feladat">

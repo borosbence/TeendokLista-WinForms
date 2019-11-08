@@ -11,7 +11,6 @@ namespace TeendokLista.ViewInterfaces
     interface ITeendokListaView
     {
         IList<Feladat> feladatLista { get; set; }
-
         Feladat feladat { get; set; }
     }
 }

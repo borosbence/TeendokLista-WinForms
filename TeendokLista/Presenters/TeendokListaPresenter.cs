@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,23 +24,31 @@ namespace TeendokLista.Presenters
             view.feladatLista = db.Feladat.ToList();
         }
 
-        public void GetFeladat(int id)
+        public void GetFeladat(int index)
         {
-            view.feladat = db.Feladat.SingleOrDefault(x => x.Id == id + 1);
+            var id = view.feladatLista[index].Id;
+            view.feladat = db.Feladat.SingleOrDefault(x => x.Id == id);
         }
 
-        //private DataTable ToDataTable<T>(T entity) where T : class
-        //{
-        //    var properties = typeof(T).GetProperties();
-        //    var table = new DataTable();
-
-        //    foreach (var property in properties)
-        //    {
-        //        table.Columns.Add(property.Name, property.PropertyType);
-        //    }
-
-        //    table.Rows.Add(properties.Select(p => p.GetValue(entity, null)).ToArray());
-        //    return table;
-        //}
+        public void CheckFeladat(Feladat feladat, bool allapot)
+        {
+            //var id = view.feladatLista[index].Id;
+            //var feladat = db.Feladat.SingleOrDefault(x => x.Id == id);
+            feladat.Teljesitve = allapot;
+            /*
+             * check the Copy to Output Directory of DB.
+             * change the Copy to Output Directory property of the database file to Copy if newer..
+             */
+            db.Entry(feladat).State = EntityState.Modified;
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                throw;
+            }
+            //LoadData();
+        }
     }
 }
