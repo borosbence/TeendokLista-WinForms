@@ -12,15 +12,19 @@ namespace TeendokLista.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class feladat
+    public partial class felhasznalo
     {
-        public int Id { get; set; }
-        public string Cim { get; set; }
-        public string Szoveg { get; set; }
-        public System.DateTime LetrehozasDatum { get; set; }
-        public bool Teljesitve { get; set; }
-        public int felhasznaloId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public felhasznalo()
+        {
+            this.feladat = new HashSet<feladat>();
+        }
     
-        public virtual felhasznalo felhasznalo { get; set; }
+        public int Id { get; set; }
+        public string FelhasznaloNev { get; set; }
+        public string Jelszo { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<feladat> feladat { get; set; }
     }
 }

@@ -4,57 +4,120 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="TeendokDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Feladat">
+    <Schema Namespace="teendoklistaModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="feladat">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Cim" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Szoveg" Type="nvarchar" MaxLength="255" />
-          <Property Name="LetrehozasDatum" Type="date" Nullable="false" />
-          <Property Name="Teljesitve" Type="bit" Nullable="false" />
+          <Property Name="Cim" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Szoveg" Type="varchar" MaxLength="255" />
+          <Property Name="LetrehozasDatum" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="Teljesitve" Type="bool" Nullable="false" />
+          <Property Name="felhasznaloId" Type="int" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="TeendokDatabaseModelStoreContainer">
-          <EntitySet Name="Feladat" EntityType="Self.Feladat" Schema="dbo" store:Type="Tables" />
+        <EntityType Name="felhasznalo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FelhasznaloNev" Type="longtext" Nullable="false" />
+          <Property Name="Jelszo" Type="longtext" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_felhasznalofeladat">
+          <End Role="felhasznalo" Type="Self.felhasznalo" Multiplicity="1" />
+          <End Role="feladat" Type="Self.feladat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="felhasznalo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="feladat">
+              <PropertyRef Name="felhasznaloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="teendoklistaModelStoreContainer">
+          <EntitySet Name="feladat" EntityType="Self.feladat" Schema="teendoklista" store:Type="Tables" />
+          <EntitySet Name="felhasznalo" EntityType="Self.felhasznalo" Schema="teendoklista" store:Type="Tables" />
+          <AssociationSet Name="FK_felhasznalofeladat" Association="Self.FK_felhasznalofeladat">
+            <End Role="felhasznalo" EntitySet="felhasznalo" />
+            <End Role="feladat" EntitySet="feladat" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="TeendokDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Feladat">
+      <Schema Namespace="teendoklistaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="feladat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Cim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Szoveg" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LetrehozasDatum" Type="DateTime" Nullable="false" />
+          <Property Name="Teljesitve" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="felhasznalo" Relationship="teendoklistaModel.felhasznalofeladat" FromRole="feladat" ToRole="felhasznalo" />
+          <Property Name="felhasznaloId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TeendokContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="feladat" EntityType="Self.feladat" />
+          <EntitySet Name="felhasznalo" EntityType="teendoklistaModel.felhasznalo" />
+          <AssociationSet Name="felhasznalofeladat" Association="teendoklistaModel.felhasznalofeladat">
+            <End Role="felhasznalo" EntitySet="felhasznalo" />
+            <End Role="feladat" EntitySet="feladat" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="felhasznalo">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Cim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Szoveg" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="LetrehozasDatum" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Teljesitve" Type="Boolean" Nullable="false" />
+          <Property Name="FelhasznaloNev" Type="String" Nullable="false" />
+          <Property Name="Jelszo" Type="String" Nullable="false" />
+          <NavigationProperty Name="feladat" Relationship="teendoklistaModel.felhasznalofeladat" FromRole="felhasznalo" ToRole="feladat" />
         </EntityType>
-        <EntityContainer Name="TeendokContext" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Feladat" EntityType="Self.Feladat" />
-        </EntityContainer>
+        <Association Name="felhasznalofeladat">
+          <End Type="teendoklistaModel.felhasznalo" Role="felhasznalo" Multiplicity="1" />
+          <End Type="teendoklistaModel.feladat" Role="feladat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="felhasznalo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="feladat">
+              <PropertyRef Name="felhasznaloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping CdmEntityContainer="TeendokContext" StorageEntityContainer="TeendokDatabaseModelStoreContainer">
-          <EntitySetMapping Name="Feladat">
-            <EntityTypeMapping TypeName="TeendokDatabaseModel.Feladat">
-              <MappingFragment StoreEntitySet="Feladat">
-                <ScalarProperty Name="Szoveg" ColumnName="Szoveg" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Cim" ColumnName="Cim" />
-                <ScalarProperty Name="LetrehozasDatum" ColumnName="LetrehozasDatum" />
-                <ScalarProperty Name="Teljesitve" ColumnName="Teljesitve" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="teendoklistaModelStoreContainer" CdmEntityContainer="TeendokContext">
+    <EntitySetMapping Name="feladat">
+      <EntityTypeMapping TypeName="IsTypeOf(teendoklistaModel.feladat)">
+        <MappingFragment StoreEntitySet="feladat">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cim" ColumnName="Cim" />
+          <ScalarProperty Name="Szoveg" ColumnName="Szoveg" />
+          <ScalarProperty Name="LetrehozasDatum" ColumnName="LetrehozasDatum" />
+          <ScalarProperty Name="Teljesitve" ColumnName="Teljesitve" />
+          <ScalarProperty Name="felhasznaloId" ColumnName="felhasznaloId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="felhasznalo">
+      <EntityTypeMapping TypeName="IsTypeOf(teendoklistaModel.felhasznalo)">
+        <MappingFragment StoreEntitySet="felhasznalo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FelhasznaloNev" ColumnName="FelhasznaloNev" />
+          <ScalarProperty Name="Jelszo" ColumnName="Jelszo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -68,8 +131,10 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="DDLGenerationTemplate" Value="$(VSEFTools)\DBGen\SSDLToMySQL8.tt" />
+        <DesignerProperty Name="DefaultDatabaseSchema" Value="teendoklista" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

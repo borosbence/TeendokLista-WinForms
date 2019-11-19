@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TeendokLista.Models
 {
-    public partial class Feladat
+    public partial class feladat
     {
-        public Feladat(string cim, string szoveg, DateTime letrehozas, bool teljesitve)
+        public feladat(string cim, string szoveg, DateTime letrehozas, bool teljesitve)
         {
             //Id = id;
             Cim = cim;
@@ -17,7 +17,7 @@ namespace TeendokLista.Models
             Teljesitve = teljesitve;
         }
 
-        public Feladat()
+        public feladat()
         {
 
         }

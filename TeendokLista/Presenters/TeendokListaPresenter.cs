@@ -21,24 +21,18 @@ namespace TeendokLista.Presenters
 
         public void LoadData()
         { 
-            view.feladatLista = db.Feladat.ToList();
+            view.feladatLista = db.feladat.ToList();
         }
 
         public void GetFeladat(int index)
         {
             var id = view.feladatLista[index].Id;
-            view.feladat = db.Feladat.SingleOrDefault(x => x.Id == id);
+            view.feladat = db.feladat.SingleOrDefault(x => x.Id == id);
         }
 
-        public void CheckFeladat(Feladat feladat, bool allapot)
+        public void CheckFeladat(feladat feladat, bool allapot)
         {
-            //var id = view.feladatLista[index].Id;
-            //var feladat = db.Feladat.SingleOrDefault(x => x.Id == id);
             feladat.Teljesitve = allapot;
-            /*
-             * check the Copy to Output Directory of DB.
-             * change the Copy to Output Directory property of the database file to Copy if newer..
-             */
             db.Entry(feladat).State = EntityState.Modified;
             try
             {

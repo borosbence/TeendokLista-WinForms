@@ -4,8 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5a5ebc24b2394ca0b3d8ea4a572dcbcb" Name="Diagram1">
-        <EntityTypeShape EntityType="TeendokDatabaseModel.Feladat" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="66e5d23cf5b04836bf44539c2155d20c" Name="Diagram1">
+        <EntityTypeShape EntityType="teendoklistaModel.feladat" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="teendoklistaModel.felhasznalo" Width="1.5" PointX="4.5" PointY="1.5" />
+        <AssociationConnector Association="teendoklistaModel.felhasznalofeladat" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

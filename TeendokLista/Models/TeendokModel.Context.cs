@@ -25,6 +25,7 @@ namespace TeendokLista.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Feladat> Feladat { get; set; }
+        public virtual DbSet<feladat> feladat { get; set; }
+        public virtual DbSet<felhasznalo> felhasznalo { get; set; }
     }
 }

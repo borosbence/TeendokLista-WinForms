@@ -28,9 +28,9 @@ namespace TeendokLista.Views
             presenter = new TeendokListaPresenter(this);
         }
 
-        public IList<Feladat> feladatLista
+        public IList<feladat> feladatLista
         {
-            get => (List<Feladat>)checkedListBox1.DataSource;
+            get => (List<feladat>)checkedListBox1.DataSource;
             set
             {
                 checkedListBox1.DataSource = value;
@@ -46,10 +46,10 @@ namespace TeendokLista.Views
             }
         }
 
-        public Feladat feladat {
+        public feladat feladat {
             get
             {
-                return new Feladat(textBox1.Text, richTextBox1.Text, Convert.ToDateTime(labelDatum.Text), checkBox1.Checked);
+                return new feladat(textBox1.Text, richTextBox1.Text, Convert.ToDateTime(labelDatum.Text), checkBox1.Checked);
             }
             set
             {
@@ -72,7 +72,7 @@ namespace TeendokLista.Views
             if (!loading)
             {
                 bool allapot = e.NewValue == CheckState.Checked ? true : false;
-                var feladat = (Feladat)checkedListBox1.Items[e.Index];
+                var feladat = (feladat)checkedListBox1.Items[e.Index];
                 presenter.CheckFeladat(feladat, allapot);
             }
         }
