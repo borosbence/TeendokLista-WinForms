@@ -51,8 +51,10 @@
             // 
             this.textBoxJelszo.Location = new System.Drawing.Point(92, 125);
             this.textBoxJelszo.Name = "textBoxJelszo";
+            this.textBoxJelszo.PasswordChar = '*';
             this.textBoxJelszo.Size = new System.Drawing.Size(200, 20);
             this.textBoxJelszo.TabIndex = 1;
+            this.textBoxJelszo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxJelszo_KeyUp);
             // 
             // textBoxFelhasznaloNev
             // 

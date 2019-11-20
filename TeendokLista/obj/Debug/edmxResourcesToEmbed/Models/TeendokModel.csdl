@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="teendoklistaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="feladat">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Cim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Szoveg" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LetrehozasDatum" Type="DateTime" Nullable="false" />
+    <Property Name="Teljesitve" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="felhasznalo" Relationship="teendoklistaModel.felhasznalofeladat" FromRole="feladat" ToRole="felhasznalo" />
+    <Property Name="felhasznaloId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="TeendokContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="feladat" EntityType="Self.feladat" />
+    <EntitySet Name="felhasznalo" EntityType="teendoklistaModel.felhasznalo" />
+    <AssociationSet Name="felhasznalofeladat" Association="teendoklistaModel.felhasznalofeladat">
+      <End Role="felhasznalo" EntitySet="felhasznalo" />
+      <End Role="feladat" EntitySet="feladat" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="felhasznalo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FelhasznaloNev" Type="String" Nullable="false" />
+    <Property Name="Jelszo" Type="String" Nullable="false" />
+    <NavigationProperty Name="feladat" Relationship="teendoklistaModel.felhasznalofeladat" FromRole="felhasznalo" ToRole="feladat" />
+  </EntityType>
+  <Association Name="felhasznalofeladat">
+    <End Type="teendoklistaModel.felhasznalo" Role="felhasznalo" Multiplicity="1" />
+    <End Type="teendoklistaModel.feladat" Role="feladat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="felhasznalo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="feladat">
+        <PropertyRef Name="felhasznaloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

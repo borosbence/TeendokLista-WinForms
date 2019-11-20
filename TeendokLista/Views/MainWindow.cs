@@ -28,7 +28,7 @@ namespace TeendokLista.Views
             presenter = new TeendokListaPresenter(this);
         }
 
-        public IList<feladat> feladatLista
+        public List<feladat> feladatLista
         {
             get => (List<feladat>)checkedListBox1.DataSource;
             set
@@ -49,10 +49,12 @@ namespace TeendokLista.Views
         public feladat feladat {
             get
             {
-                return new feladat(textBox1.Text, richTextBox1.Text, Convert.ToDateTime(labelDatum.Text), checkBox1.Checked);
+                var id = int.Parse(labelSorszam.Text);
+                return new feladat(textBox1.Text, richTextBox1.Text, Convert.ToDateTime(labelDatum.Text), checkBox1.Checked, id);
             }
             set
             {
+                labelSorszam.Text = value.Id.ToString();
                 textBox1.Text = value.Cim;
                 richTextBox1.Text = value.Szoveg;
                 labelDatum.Text = value.LetrehozasDatum.ToShortDateString();
@@ -62,7 +64,6 @@ namespace TeendokLista.Views
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            presenter.LoadData();
             loading = false;
             labelDatum.Text = null;
         }
@@ -73,14 +74,37 @@ namespace TeendokLista.Views
             {
                 bool allapot = e.NewValue == CheckState.Checked ? true : false;
                 var feladat = (feladat)checkedListBox1.Items[e.Index];
-                presenter.CheckFeladat(feladat, allapot);
+                presenter.CheckFeladat(feladat.Id, allapot);
             }
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var index = checkedListBox1.SelectedIndex;
-            presenter.GetFeladat(index);
+            if (!loading)
+            {
+                if (checkedListBox1.SelectedItem != null)
+                {
+                    var id = int.Parse(checkedListBox1.SelectedValue.ToString());
+                    presenter.GetFeladat(id);
+                }
+            }
+        }
+
+        private void toolStripButtonTorles_Click_1(object sender, EventArgs e)
+        {
+            var id = int.Parse(checkedListBox1.SelectedValue.ToString());
+            presenter.DeleteFeladat(id);
+        }
+
+        private void feladatToolStripUjFeladat_Click(object sender, EventArgs e)
+        {
+            presenter.CreateFeladat();
+            checkedListBox1.ClearSelected();
+        }
+
+        private void toolStripButtonMentes_Click(object sender, EventArgs e)
+        {
+            presenter.SaveFeladat();
         }
     }
 }

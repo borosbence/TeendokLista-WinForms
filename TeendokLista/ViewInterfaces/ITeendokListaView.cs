@@ -10,7 +10,7 @@ namespace TeendokLista.ViewInterfaces
 {
     interface ITeendokListaView
     {
-        IList<feladat> feladatLista { get; set; }
+        List<feladat> feladatLista { get; set; }
         feladat feladat { get; set; }
     }
 }

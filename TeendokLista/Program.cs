@@ -17,7 +17,10 @@ namespace TeendokLista
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            // Nyelv váltáshoz
+            //System.Globalization.CultureInfo en = new System.Globalization.CultureInfo("en");
+            //System.Threading.Thread.CurrentThread.CurrentUICulture = en;
+            Application.Run(new MainWindow());
         }
     }
 }

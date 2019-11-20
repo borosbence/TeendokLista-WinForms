@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TeendokLista.Models;
+using TeendokLista.Properties;
 using TeendokLista.ViewInterfaces;
 
 namespace TeendokLista.Presenters
@@ -19,19 +20,26 @@ namespace TeendokLista.Presenters
             view = param;
         }
 
+        private bool ConnectionExist()
+        {
+            return db.Database.Exists();
+        }
+
         public void Authenticate(string username, string password)
         {
-            if (username == "admin" && password == "admin")
+            if (!ConnectionExist())
             {
-                var user = db.felhasznalo.SingleOrDefault(x => x.FelhasznaloNev.Equals(username) && x.Jelszo.Equals(password));
-                if (user != null)
-                {
-                    LoginSucces = true;
-                }
+                view.ErrorMessage = Resources.KapcsolodasSikertelen;
+            }
+
+            var user = db.felhasznalo.SingleOrDefault(x => x.FelhasznaloNev.Equals(username) && x.Jelszo.Equals(password));
+            if (user != null)
+            {
+                LoginSucces = true;
             }
             else
             {
-                view.ErrorMessage = "Hibás felhasználónév vagy jelszó!";
+                view.ErrorMessage = Resources.HibasLogin;
             }
         }
 

@@ -18,7 +18,7 @@ namespace TeendokLista.Views
         public string ErrorMessage 
         {
             get => errorProviderFNev.GetError(textBoxFelhasznaloNev);
-            set => errorProviderFNev.SetError(textBoxFelhasznaloNev, "Hibás belépés!");
+            set => errorProviderFNev.SetError(textBoxFelhasznaloNev, value);
         }
 
         public Login()
@@ -36,6 +36,14 @@ namespace TeendokLista.Views
                 Hide();
                 MainWindow.ShowDialog();
                 Close();
+            }
+        }
+
+        private void textBoxJelszo_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonLogin.PerformClick();
             }
         }
     }
