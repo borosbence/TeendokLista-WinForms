@@ -1,30 +1,11 @@
 -- -----------------------------------------------------------
 -- Entity Designer DDL Script for MySQL Server 4.1 and higher
 -- -----------------------------------------------------------
--- Date Created: 11/19/2019 20:19:03
+-- Date Created: 11/21/2019 11:34:43
 
--- Generated from EDMX file: H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\Models\TeendokModel.edmx
+-- Generated from EDMX file: C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\Models\TeendokModel.edmx
 -- Target version: 3.0.0.0
-
 -- --------------------------------------------------
-
-
-
--- --------------------------------------------------
--- Dropping existing FOREIGN KEY constraints
--- NOTE: if the constraint does not exist, an ignorable error will be reported.
--- --------------------------------------------------
-
-
-
--- --------------------------------------------------
--- Dropping existing tables
--- --------------------------------------------------
-SET foreign_key_checks = 0;
-
-    DROP TABLE IF EXISTS `feladat`;
-
-SET foreign_key_checks = 1;
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -36,11 +17,21 @@ CREATE TABLE `feladat`(
 	`Cim` varchar (50) NOT NULL, 
 	`Szoveg` varchar (255), 
 	`LetrehozasDatum` datetime NOT NULL, 
-	`Teljesitve` boolean NOT NULL, 
+	`Teljesitve` bool NOT NULL, 
 	`felhasznaloId` int NOT NULL,
-    PRIMARY KEY (`Id`));
+	PRIMARY KEY (`Id`));
+
+--ALTER TABLE `feladat` ADD PRIMARY KEY (`Id`);
 
 
+
+CREATE TABLE `felhasznalo`(
+	`Id` int NOT NULL AUTO_INCREMENT UNIQUE, 
+	`FelhasznaloNev` varchar (255) NOT NULL, 
+	`Jelszo` varchar (255) NOT NULL,
+	PRIMARY KEY (`Id`));
+
+--ALTER TABLE `felhasznalo` ADD PRIMARY KEY (`Id`);
 
 
 CREATE TABLE `felhasznalo`(
@@ -48,10 +39,6 @@ CREATE TABLE `felhasznalo`(
 	`FelhasznaloNev` longtext NOT NULL, 
 	`Jelszo` longtext NOT NULL,
 	PRIMARY KEY(`Id`));
-
-
-
-
 
 
 

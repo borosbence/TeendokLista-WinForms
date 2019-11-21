@@ -11,13 +11,14 @@ using TeendokLista.ViewInterfaces;
 
 namespace TeendokLista.Presenters
 {
-    class TeendokListaPresenter : IDisposable
+    class TeendokListaPresenter
     {
-        private TeendokContext db = new TeendokContext();
+        private TeendokContext db;
         private ITeendokListaView view;
         public TeendokListaPresenter(ITeendokListaView param)
         {
             view = param;
+            db = new TeendokContext();
             // Lista feltöltése
             LoadData();
             // Az első elem betöltése szerkesztés nézetben
@@ -58,22 +59,20 @@ namespace TeendokLista.Presenters
         public void SaveFeladat()
         {
             var feladat = view.feladat;
+            // A jelenlegi felhasználó Id-jának lekérdezése
+            feladat.felhasznaloId = CurrentUser.Id;
+
             // Megkeressük a db-ben
             var letezik = db.feladat.Find(feladat.Id);
-            //var letezik = db.feladat.AsNoTracking().SingleOrDefault(x => x.Id == feladat.Id);
 
             // Ha már létezik
             if (letezik != null)
             {
-                // A jelenlegi felhasználó Id-jának lekérdezése
-                feladat.felhasznaloId = CurrentUser.Id;
-                letezik = feladat;
-                db.Entry(letezik).State = EntityState.Modified;
+                db.Entry(letezik).State = EntityState.Detached;
+                db.Entry(feladat).State = EntityState.Modified;
             }
             else
             {
-                // A jelenlegi felhasználó Id-jának lekérdezése
-                feladat.felhasznaloId = CurrentUser.Id;
                 db.feladat.Add(feladat);
             }
 
@@ -108,11 +107,6 @@ namespace TeendokLista.Presenters
             }
 
             LoadData();
-        }
-
-        public void Dispose()
-        {
-            db.Dispose();
         }
     }
 }
