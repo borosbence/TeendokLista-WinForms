@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Cim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Szoveg" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="LetrehozasDatum" Type="DateTime" Nullable="false" />
@@ -25,8 +25,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FelhasznaloNev" Type="String" Nullable="false" />
-    <Property Name="Jelszo" Type="String" Nullable="false" />
+    <Property Name="FelhasznaloNev" Type="String" Nullable="false" MaxLength="255" />
+    <Property Name="Jelszo" Type="String" Nullable="false" MaxLength="255" />
     <NavigationProperty Name="feladat" Relationship="teendoklistaModel.felhasznalofeladat" FromRole="felhasznalo" ToRole="feladat" />
   </EntityType>
   <Association Name="felhasznalofeladat">
