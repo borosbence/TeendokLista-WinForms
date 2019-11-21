@@ -30,7 +30,6 @@ namespace TeendokLista.Views
 
         public List<feladat> feladatLista
         {
-            get => (List<feladat>)checkedListBox1.DataSource;
             set
             {
                 checkedListBox1.DataSource = value;

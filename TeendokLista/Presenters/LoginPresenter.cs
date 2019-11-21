@@ -25,23 +25,23 @@ namespace TeendokLista.Presenters
             return db.Database.Exists();
         }
 
-        public void Authenticate(string username, string password)
+        public void Authenticate()
         {
             if (!ConnectionExist())
             {
                 view.ErrorMessage = Resources.KapcsolodasSikertelen;
             }
 
-            var user = db.felhasznalo.SingleOrDefault(x => x.FelhasznaloNev.Equals(username) && x.Jelszo.Equals(password));
+            var user = db.felhasznalo.SingleOrDefault(x => x.FelhasznaloNev.Equals(view.UserName) && x.Jelszo.Equals(view.Password));
             if (user != null)
             {
                 LoginSucces = true;
+                CurrentUser.Id = user.Id;
             }
             else
             {
                 view.ErrorMessage = Resources.HibasLogin;
             }
         }
-
     }
 }

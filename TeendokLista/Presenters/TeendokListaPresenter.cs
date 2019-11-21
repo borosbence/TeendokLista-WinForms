@@ -11,25 +11,27 @@ using TeendokLista.ViewInterfaces;
 
 namespace TeendokLista.Presenters
 {
-    class TeendokListaPresenter
+    class TeendokListaPresenter : IDisposable
     {
         private TeendokContext db = new TeendokContext();
         private ITeendokListaView view;
         public TeendokListaPresenter(ITeendokListaView param)
         {
             view = param;
+            // Lista feltöltése
             LoadData();
+            // Az első elem betöltése szerkesztés nézetben
+            GetFeladat(db.feladat.First().Id);
         }
 
         public void LoadData()
         {
             view.feladatLista = db.feladat.ToList();
-            // GetFeladat(db.feladat.First().Id);
         }
 
         public void GetFeladat(int id)
         {
-            view.feladat = db.feladat.SingleOrDefault(x => x.Id == id);
+            view.feladat = db.feladat.Find(id);
         }
 
         public void CheckFeladat(int id, bool allapot)
@@ -57,20 +59,21 @@ namespace TeendokLista.Presenters
         {
             var feladat = view.feladat;
             // Megkeressük a db-ben
-            var letezik = db.feladat.SingleOrDefault(x => x.Id == feladat.Id);
+            var letezik = db.feladat.Find(feladat.Id);
+            //var letezik = db.feladat.AsNoTracking().SingleOrDefault(x => x.Id == feladat.Id);
 
             // Ha már létezik
             if (letezik != null)
             {
-                // TODO: admin Id-jének lekérdezése
-                feladat.felhasznaloId = 1;
+                // A jelenlegi felhasználó Id-jának lekérdezése
+                feladat.felhasznaloId = CurrentUser.Id;
                 letezik = feladat;
                 db.Entry(letezik).State = EntityState.Modified;
             }
             else
             {
-                // TODO: admin Id-jének lekérdezése
-                feladat.felhasznaloId = 1;
+                // A jelenlegi felhasználó Id-jának lekérdezése
+                feladat.felhasznaloId = CurrentUser.Id;
                 db.feladat.Add(feladat);
             }
 
@@ -105,6 +108,11 @@ namespace TeendokLista.Presenters
             }
 
             LoadData();
+        }
+
+        public void Dispose()
+        {
+            db.Dispose();
         }
     }
 }

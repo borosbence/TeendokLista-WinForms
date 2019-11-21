@@ -9,5 +9,7 @@ namespace TeendokLista.ViewInterfaces
     interface ILoginView
     {
         string ErrorMessage { get; set; }
+        string UserName { get; }
+        string Password { get; }
     }
 }

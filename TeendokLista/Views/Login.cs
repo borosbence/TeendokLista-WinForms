@@ -20,6 +20,8 @@ namespace TeendokLista.Views
             get => errorProviderFNev.GetError(textBoxFelhasznaloNev);
             set => errorProviderFNev.SetError(textBoxFelhasznaloNev, value);
         }
+        public string UserName { get => textBoxFelhasznaloNev.Text; }
+        public string Password { get => textBoxJelszo.Text; }
 
         public Login()
         {
@@ -29,7 +31,7 @@ namespace TeendokLista.Views
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            presenter.Authenticate(textBoxFelhasznaloNev.Text, textBoxJelszo.Text );
+            presenter.Authenticate();
             if (presenter.LoginSucces)
             {
                 var MainWindow = new MainWindow();

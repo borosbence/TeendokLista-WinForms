@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\CurrentUser.cs" />
     <Compile Include="Models\feladat.cs">
       <DependentUpon>TeendokModel.tt</DependentUpon>
     </Compile>
@@ -140,10 +141,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>TeendokModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\export.mysql" />
-    <None Include="Models\TeendokModel.edmx.diagram">
-      <DependentUpon>TeendokModel.edmx</DependentUpon>
-    </None>
+    <None Include="SQL\export.mysql" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -175,7 +173,7 @@
       <DependentUpon>TeendokModel.edmx</DependentUpon>
       <LastGenOutput>TeendokModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\TeendokModel.edmx.sql" />
+    <Content Include="SQL\TeendokModel.edmx.sql" />
     <Content Include="Models\TeendokModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TeendokModel.edmx</DependentUpon>
