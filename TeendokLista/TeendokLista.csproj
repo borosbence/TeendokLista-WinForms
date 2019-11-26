@@ -144,7 +144,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>TeendokModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="SQL\export.mysql" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -155,6 +154,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SQL\export.mysql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -176,7 +176,6 @@
       <DependentUpon>TeendokModel.edmx</DependentUpon>
       <LastGenOutput>TeendokModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="SQL\TeendokModel.edmx.sql" />
     <Content Include="Models\TeendokModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TeendokModel.edmx</DependentUpon>

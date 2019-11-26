@@ -8,7 +8,7 @@ namespace TeendokLista.Models
 {
     public partial class feladat
     {
-        public feladat(string cim, string szoveg, DateTime letrehozas, bool teljesitve, int id = 0)
+        public feladat(int id, string cim, string szoveg, DateTime letrehozas, bool teljesitve)
         {
             Id = id;
             Cim = cim;

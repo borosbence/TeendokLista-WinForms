@@ -2,23 +2,23 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="teendoklistaModelStoreContainer" CdmEntityContainer="TeendokContext">
     <EntitySetMapping Name="feladat">
-      <EntityTypeMapping TypeName="IsTypeOf(teendoklistaModel.feladat)">
+      <EntityTypeMapping TypeName="teendoklistaModel.feladat">
         <MappingFragment StoreEntitySet="feladat">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Cim" ColumnName="Cim" />
-          <ScalarProperty Name="Szoveg" ColumnName="Szoveg" />
-          <ScalarProperty Name="LetrehozasDatum" ColumnName="LetrehozasDatum" />
-          <ScalarProperty Name="Teljesitve" ColumnName="Teljesitve" />
           <ScalarProperty Name="felhasznaloId" ColumnName="felhasznaloId" />
+          <ScalarProperty Name="Teljesitve" ColumnName="Teljesitve" />
+          <ScalarProperty Name="LetrehozasDatum" ColumnName="LetrehozasDatum" />
+          <ScalarProperty Name="Szoveg" ColumnName="Szoveg" />
+          <ScalarProperty Name="Cim" ColumnName="Cim" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="felhasznalo">
-      <EntityTypeMapping TypeName="IsTypeOf(teendoklistaModel.felhasznalo)">
+      <EntityTypeMapping TypeName="teendoklistaModel.felhasznalo">
         <MappingFragment StoreEntitySet="felhasznalo">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="FelhasznaloNev" ColumnName="FelhasznaloNev" />
           <ScalarProperty Name="Jelszo" ColumnName="Jelszo" />
+          <ScalarProperty Name="FelhasznaloNev" ColumnName="FelhasznaloNev" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

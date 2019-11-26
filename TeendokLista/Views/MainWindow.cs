@@ -49,7 +49,7 @@ namespace TeendokLista.Views
             get
             {
                 var id = int.Parse(labelSorszam.Text);
-                return new feladat(textBox1.Text, richTextBox1.Text, Convert.ToDateTime(labelDatum.Text), checkBox1.Checked, id);
+                return new feladat(id, textBox1.Text, richTextBox1.Text, Convert.ToDateTime(labelDatum.Text), checkBox1.Checked);
             }
             set
             {
@@ -64,7 +64,6 @@ namespace TeendokLista.Views
         private void MainWindow_Load(object sender, EventArgs e)
         {
             loading = false;
-            labelDatum.Text = null;
         }
 
         private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)

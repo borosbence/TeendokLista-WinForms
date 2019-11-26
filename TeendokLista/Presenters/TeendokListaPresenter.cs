@@ -21,8 +21,12 @@ namespace TeendokLista.Presenters
             db = new TeendokContext();
             // Lista feltöltése
             LoadData();
-            // Az első elem betöltése szerkesztés nézetben
-            GetFeladat(db.feladat.First().Id);
+            // Ha van feladat a listában
+            if (db.feladat.First() != null)
+            {
+                // Az első elem betöltése szerkesztés nézetben
+                GetFeladat(db.feladat.First().Id);
+            }
         }
 
         public void LoadData()
@@ -53,7 +57,11 @@ namespace TeendokLista.Presenters
 
         public void CreateFeladat()
         {
-            view.feladat = new feladat(null,null,DateTime.Now,false);
+            var id = db.feladat
+                .Select(x => x.Id)
+                .DefaultIfEmpty(0)
+                .Max() + 1;
+            view.feladat = new feladat(id,null,null,DateTime.Now,false);
         }
 
         public void SaveFeladat()
