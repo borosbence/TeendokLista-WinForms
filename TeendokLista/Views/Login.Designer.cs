@@ -98,6 +98,7 @@
             this.Controls.Add(this.labelFelhasznaloNev);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFNev)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -74,7 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\CurrentUser.cs" />
+    <Compile Include="Services\CurrentUser.cs" />
     <Compile Include="Models\feladat.cs">
       <DependentUpon>TeendokModel.tt</DependentUpon>
     </Compile>
@@ -106,6 +106,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.en.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\Hash.cs" />
     <Compile Include="ViewInterfaces\ILoginView.cs" />
     <Compile Include="ViewInterfaces\ITeendokListaView.cs" />
     <Compile Include="Views\Login.cs">

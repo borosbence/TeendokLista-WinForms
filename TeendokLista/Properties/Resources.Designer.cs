@@ -61,6 +61,15 @@ namespace TeendokLista.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A megadott felhasználó nem létezik!.
+        /// </summary>
+        public static string FelhasznaloNemLetezik {
+            get {
+                return ResourceManager.GetString("FelhasznaloNemLetezik", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hibás felhasználónév vagy jelszó!.
         /// </summary>
         public static string HibasLogin {

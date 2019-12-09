@@ -48,5 +48,10 @@ namespace TeendokLista.Views
                 buttonLogin.PerformClick();
             }
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            presenter.CheckConnection();
+        }
     }
 }
