@@ -37,10 +37,7 @@ namespace TeendokLista.Views
                 checkedListBox1.ValueMember = "Id";
                 for (int i = 0; i < value.Count; i++)
                 {
-                    if (value[i].Teljesitve)
-                    {
-                        checkedListBox1.SetItemChecked(i, true);
-                    }
+                    checkedListBox1.SetItemChecked(i, value[i].Teljesitve);
                 }
             }
         }
