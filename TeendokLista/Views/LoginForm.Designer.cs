@@ -1,6 +1,6 @@
 ﻿namespace TeendokLista.Views
 {
-    partial class Login
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -86,7 +86,7 @@
             // 
             this.errorProviderFNev.ContainerControl = this;
             // 
-            // Login
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -96,7 +96,7 @@
             this.Controls.Add(this.textBoxJelszo);
             this.Controls.Add(this.labelJelszo);
             this.Controls.Add(this.labelFelhasznaloNev);
-            this.Name = "Login";
+            this.Name = "LoginForm";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFNev)).EndInit();

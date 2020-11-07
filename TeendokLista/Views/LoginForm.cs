@@ -12,18 +12,14 @@ using TeendokLista.ViewInterfaces;
 
 namespace TeendokLista.Views
 {
-    public partial class Login : Form, ILoginView
+    public partial class LoginForm : Form, ILoginView
     {
         private LoginPresenter presenter;
-        public string ErrorMessage 
-        {
-            get => errorProviderFNev.GetError(textBoxFelhasznaloNev);
-            set => errorProviderFNev.SetError(textBoxFelhasznaloNev, value);
-        }
+        public string ErrorMessage { set => errorProviderFNev.SetError(textBoxFelhasznaloNev, value); }
         public string UserName { get => textBoxFelhasznaloNev.Text; }
         public string Password { get => textBoxJelszo.Text; }
 
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
             presenter = new LoginPresenter(this);
@@ -34,7 +30,7 @@ namespace TeendokLista.Views
             presenter.Authenticate();
             if (presenter.LoginSucces)
             {
-                var MainWindow = new MainWindow();
+                var MainWindow = new MainForm();
                 Hide();
                 MainWindow.ShowDialog();
                 Close();

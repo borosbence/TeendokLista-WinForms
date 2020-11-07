@@ -20,9 +20,9 @@ namespace TeendokLista.Models
             this.feladat = new HashSet<feladat>();
         }
     
-        public int Id { get; set; }
-        public string FelhasznaloNev { get; set; }
-        public string Jelszo { get; set; }
+        public int id { get; set; }
+        public string felhasznalonev { get; set; }
+        public string jelszo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<feladat> feladat { get; set; }

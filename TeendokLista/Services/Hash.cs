@@ -9,18 +9,18 @@ namespace TeendokLista.Services
 {
     public static class Hash
     {
-        public static string Encrypt(string value)
+        public static string Encrypt(string text)
         {
-            var sha1 = SHA256.Create();
-            byte[] inputBytes = Encoding.ASCII.GetBytes(value);
-            var hash = sha1.ComputeHash(inputBytes);
+            byte[] textBytes = Encoding.UTF8.GetBytes(text);
+            byte[] hash = SHA512.Create().ComputeHash(textBytes);
 
-            StringBuilder sb = new StringBuilder();
-            for (var i = 0; i < hash.Length; i++)
+            string hashedPwd = string.Empty;
+            for (int i = 0; i < hash.Length; i++)
             {
-                sb.Append(hash[i].ToString("X2"));
+                hashedPwd += hash[i].ToString("X2");
             }
-            return sb.ToString();
+
+            return hashedPwd;
         }
     }
 }

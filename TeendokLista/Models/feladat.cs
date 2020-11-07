@@ -14,12 +14,12 @@ namespace TeendokLista.Models
     
     public partial class feladat
     {
-        public int Id { get; set; }
-        public string Cim { get; set; }
-        public string Szoveg { get; set; }
-        public System.DateTime LetrehozasDatum { get; set; }
-        public bool Teljesitve { get; set; }
-        public int felhasznaloId { get; set; }
+        public int id { get; set; }
+        public string cim { get; set; }
+        public string szoveg { get; set; }
+        public System.DateTime letrehozas_datum { get; set; }
+        public bool teljesitve { get; set; }
+        public int felhasznalo_id { get; set; }
     
         public virtual felhasznalo felhasznalo { get; set; }
     }

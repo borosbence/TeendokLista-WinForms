@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,59 +19,61 @@ namespace TeendokLista.Presenters
         {
             view = param;
             db = new TeendokContext();
-            // Lista feltöltése
-            LoadData();
             // Ha van feladat a listában
-            if (db.feladat.First() != null)
+            if (db.feladat.Any())
             {
                 // Az első elem betöltése szerkesztés nézetben
-                GetFeladat(db.feladat.First().Id);
+                GetFeladat(db.feladat.First().id);
             }
         }
 
+        /// <summary>
+        /// Lista feltöltése adatbázisból.
+        /// </summary>
         public void LoadData()
         {
             view.feladatLista = db.feladat.ToList();
         }
-
+        /// <summary>
+        /// Feladat részleteinek lerkédezése.
+        /// </summary>
+        /// <param name="id">Feladat azonosító</param>
         public void GetFeladat(int id)
         {
             view.feladat = db.feladat.Find(id);
         }
 
+        /// <summary>
+        /// Feladat beállítása elvégzettre
+        /// </summary>
+        /// <param name="id">Feladat azonosító</param>
+        /// <param name="allapot">Állapot</param>
         public void CheckFeladat(int id, bool allapot)
         {
             var feladat = db.feladat.Find(id);
-            feladat.Teljesitve = allapot;
+            feladat.teljesitve = allapot;
             db.Entry(feladat).State = EntityState.Modified;
 
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                throw;
-            }
+            db.SaveChanges();
         }
 
         public void CreateFeladat()
         {
             var id = db.feladat
-                .Select(x => x.Id)
+                .Select(x => x.id)
                 .DefaultIfEmpty(0)
                 .Max() + 1;
-            view.feladat = new feladat(id,null,null,DateTime.Now,false);
+            view.feladat = new feladat(id, null, null, DateTime.Now, false);
         }
 
         public void SaveFeladat()
         {
             var feladat = view.feladat;
-            // A jelenlegi felhasználó Id-jának lekérdezése
-            feladat.felhasznaloId = CurrentUser.Id;
+            // A jelenlegi felhasználó id-jának lekérdezése
+            feladat.felhasznalo_id = CurrentUser.Id;
 
             // Megkeressük a db-ben
-            var letezik = db.feladat.Find(feladat.Id);
+            var letezik = db.feladat.Find(feladat.id);
 
             // Ha már létezik
             if (letezik != null)
@@ -85,15 +86,7 @@ namespace TeendokLista.Presenters
                 db.feladat.Add(feladat);
             }
 
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                throw;
-            }
-
+            db.SaveChanges();
             LoadData();
         }
 
@@ -106,15 +99,7 @@ namespace TeendokLista.Presenters
                 db.feladat.Remove(feladat);
             }
 
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                throw;
-            }
-
+            db.SaveChanges();
             LoadData();
         }
     }

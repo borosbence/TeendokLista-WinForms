@@ -39,20 +39,20 @@ namespace TeendokLista.Presenters
             if (ConnectionExist())
             {
                 // Ezzel a felhasználónévvel létezik e rekord
-                var dbUser = db.felhasznalo.SingleOrDefault(x => x.FelhasznaloNev.Equals(view.UserName));
+                var dbUser = db.felhasznalo.SingleOrDefault(x => x.felhasznalonev.Equals(view.UserName));
                 if (dbUser != null)
                 {
                     // Só lekérése titkosításhoz
-                    var salt = dbUser.Id;
+                    var salt = dbUser.id;
                     // Begépelt jelszó titkosítása
                     var password = Hash.Encrypt(view.Password + salt);
 
                     // Rekord keresése
-                    var user = db.felhasznalo.SingleOrDefault(x => x.FelhasznaloNev.Equals(view.UserName) && x.Jelszo.Equals(password));
+                    var user = db.felhasznalo.SingleOrDefault(x => x.felhasznalonev.Equals(view.UserName) && x.jelszo.Equals(password));
                     if (user != null)
                     {
                         LoginSucces = true;
-                        CurrentUser.Id = user.Id;
+                        CurrentUser.Id = user.id;
                     }
                     else
                     {

@@ -20,7 +20,7 @@ namespace TeendokLista
             // Nyelv váltáshoz
             //System.Globalization.CultureInfo en = new System.Globalization.CultureInfo("en");
             //System.Threading.Thread.CurrentThread.CurrentUICulture = en;
-            Application.Run(new Login());
+            Application.Run(new LoginForm());
         }
     }
 }

@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="teendoklistaModelStoreContainer" CdmEntityContainer="TeendokContext">
-    <EntitySetMapping Name="feladat">
-      <EntityTypeMapping TypeName="teendoklistaModel.feladat">
-        <MappingFragment StoreEntitySet="feladat">
-          <ScalarProperty Name="felhasznaloId" ColumnName="felhasznaloId" />
-          <ScalarProperty Name="Teljesitve" ColumnName="Teljesitve" />
-          <ScalarProperty Name="LetrehozasDatum" ColumnName="LetrehozasDatum" />
-          <ScalarProperty Name="Szoveg" ColumnName="Szoveg" />
-          <ScalarProperty Name="Cim" ColumnName="Cim" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="felhasznalo">
       <EntityTypeMapping TypeName="teendoklistaModel.felhasznalo">
         <MappingFragment StoreEntitySet="felhasznalo">
-          <ScalarProperty Name="Jelszo" ColumnName="Jelszo" />
-          <ScalarProperty Name="FelhasznaloNev" ColumnName="FelhasznaloNev" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="jelszo" ColumnName="jelszo" />
+          <ScalarProperty Name="felhasznalonev" ColumnName="felhasznalonev" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="feladat">
+      <EntityTypeMapping TypeName="teendoklistaModel.feladat">
+        <MappingFragment StoreEntitySet="feladat">
+          <ScalarProperty Name="felhasznalo_id" ColumnName="felhasznalo_id" />
+          <ScalarProperty Name="teljesitve" ColumnName="teljesitve" />
+          <ScalarProperty Name="letrehozas_datum" ColumnName="letrehozas_datum" />
+          <ScalarProperty Name="szoveg" ColumnName="szoveg" />
+          <ScalarProperty Name="cim" ColumnName="cim" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
