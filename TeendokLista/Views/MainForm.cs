@@ -20,7 +20,6 @@ namespace TeendokLista.Views
         {
             InitializeComponent();
             presenter = new TeendokListaPresenter(this);
-            labelDatum.Text = DateTime.Now.ToString();
         }
 
         public List<feladat> feladatLista
@@ -58,6 +57,7 @@ namespace TeendokLista.Views
         {
             presenter.LoadData();
             loaded = true;
+            labelDatum.Text = DateTime.Now.ToString();
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)

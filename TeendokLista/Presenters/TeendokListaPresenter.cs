@@ -19,11 +19,11 @@ namespace TeendokLista.Presenters
         {
             view = param;
             db = new TeendokContext();
-            // Ha van feladat a listában
-            if (db.feladat.Any())
+            // Ha van feladat a listában, ami a felhasználóhoz tartozik
+            if (db.feladat.Where(x => x.felhasznalo_id == CurrentUser.Id).Any())
             {
                 // Az első elem betöltése szerkesztés nézetben
-                GetFeladat(db.feladat.First().id);
+                GetFeladat(db.feladat.Where(x => x.felhasznalo_id == CurrentUser.Id).First().id);
             }
         }
 
@@ -32,7 +32,7 @@ namespace TeendokLista.Presenters
         /// </summary>
         public void LoadData()
         {
-            view.feladatLista = db.feladat.ToList();
+            view.feladatLista = db.feladat.Where(x=> x.felhasznalo_id == CurrentUser.Id).ToList();
         }
         /// <summary>
         /// Feladat részleteinek lerkédezése.

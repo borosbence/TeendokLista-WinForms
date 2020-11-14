@@ -6,7 +6,7 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="cim" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="szoveg" Type="varchar" MaxLength="255" />
+    <Property Name="szoveg" Type="text" />
     <Property Name="letrehozas_datum" Type="datetime" Precision="0" Nullable="false" />
     <Property Name="teljesitve" Type="bool" Nullable="false" />
     <Property Name="felhasznalo_id" Type="int" Nullable="false" />

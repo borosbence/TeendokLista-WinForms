@@ -179,9 +179,9 @@
             this.labelDatum.AutoSize = true;
             this.labelDatum.Location = new System.Drawing.Point(165, 86);
             this.labelDatum.Name = "labelDatum";
-            this.labelDatum.Size = new System.Drawing.Size(60, 13);
+            this.labelDatum.Size = new System.Drawing.Size(30, 13);
             this.labelDatum.TabIndex = 1;
-            this.labelDatum.Text = "labelDatum";
+            this.labelDatum.Text = "Most";
             // 
             // label3
             // 

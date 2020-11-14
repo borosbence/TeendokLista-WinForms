@@ -1,13 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="teendoklistaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="TeendokContext" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="felhasznalo" EntityType="teendoklistaModel.felhasznalo" />
     <EntitySet Name="feladat" EntityType="teendoklistaModel.feladat" />
+    <EntitySet Name="felhasznalo" EntityType="teendoklistaModel.felhasznalo" />
     <AssociationSet Name="FK_felhasznalofeladat" Association="teendoklistaModel.FK_felhasznalofeladat">
       <End Role="felhasznalo" EntitySet="felhasznalo" />
       <End Role="feladat" EntitySet="feladat" />
     </AssociationSet>
   </EntityContainer>
+  <EntityType Name="feladat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cim" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="szoveg" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="letrehozas_datum" Type="DateTime" Nullable="false" />
+    <Property Name="teljesitve" Type="Boolean" Nullable="false" />
+    <Property Name="felhasznalo_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="felhasznalo" Relationship="teendoklistaModel.FK_felhasznalofeladat" FromRole="feladat" ToRole="felhasznalo" />
+  </EntityType>
   <EntityType Name="felhasznalo">
     <Key>
       <PropertyRef Name="id" />
@@ -16,18 +28,6 @@
     <Property Name="felhasznalonev" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="jelszo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="feladat" Relationship="teendoklistaModel.FK_felhasznalofeladat" FromRole="felhasznalo" ToRole="feladat" />
-  </EntityType>
-  <EntityType Name="feladat">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="cim" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="szoveg" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="letrehozas_datum" Type="DateTime" Nullable="false" />
-    <Property Name="teljesitve" Type="Boolean" Nullable="false" />
-    <Property Name="felhasznalo_id" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="felhasznalo" Relationship="teendoklistaModel.FK_felhasznalofeladat" FromRole="feladat" ToRole="felhasznalo" />
   </EntityType>
   <Association Name="FK_felhasznalofeladat">
     <End Type="teendoklistaModel.felhasznalo" Role="felhasznalo" Multiplicity="1" />

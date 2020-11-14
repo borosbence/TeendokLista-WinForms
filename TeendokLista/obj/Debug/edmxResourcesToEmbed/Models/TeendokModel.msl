@@ -1,15 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="teendoklistaModelStoreContainer" CdmEntityContainer="TeendokContext">
-    <EntitySetMapping Name="felhasznalo">
-      <EntityTypeMapping TypeName="teendoklistaModel.felhasznalo">
-        <MappingFragment StoreEntitySet="felhasznalo">
-          <ScalarProperty Name="jelszo" ColumnName="jelszo" />
-          <ScalarProperty Name="felhasznalonev" ColumnName="felhasznalonev" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="feladat">
       <EntityTypeMapping TypeName="teendoklistaModel.feladat">
         <MappingFragment StoreEntitySet="feladat">
@@ -18,6 +9,15 @@
           <ScalarProperty Name="letrehozas_datum" ColumnName="letrehozas_datum" />
           <ScalarProperty Name="szoveg" ColumnName="szoveg" />
           <ScalarProperty Name="cim" ColumnName="cim" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="felhasznalo">
+      <EntityTypeMapping TypeName="teendoklistaModel.felhasznalo">
+        <MappingFragment StoreEntitySet="felhasznalo">
+          <ScalarProperty Name="jelszo" ColumnName="jelszo" />
+          <ScalarProperty Name="felhasznalonev" ColumnName="felhasznalonev" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

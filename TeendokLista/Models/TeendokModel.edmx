@@ -49,22 +49,13 @@
     <edmx:ConceptualModels>
       <Schema Namespace="teendoklistaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="TeendokContext" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="felhasznalo" EntityType="teendoklistaModel.felhasznalo" />
           <EntitySet Name="feladat" EntityType="teendoklistaModel.feladat" />
+          <EntitySet Name="felhasznalo" EntityType="teendoklistaModel.felhasznalo" />
           <AssociationSet Name="FK_felhasznalofeladat" Association="teendoklistaModel.FK_felhasznalofeladat">
             <End Role="felhasznalo" EntitySet="felhasznalo" />
             <End Role="feladat" EntitySet="feladat" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="felhasznalo">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="felhasznalonev" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="jelszo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="feladat" Relationship="teendoklistaModel.FK_felhasznalofeladat" FromRole="felhasznalo" ToRole="feladat" />
-        </EntityType>
         <EntityType Name="feladat">
           <Key>
             <PropertyRef Name="id" />
@@ -76,6 +67,15 @@
           <Property Name="teljesitve" Type="Boolean" Nullable="false" />
           <Property Name="felhasznalo_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="felhasznalo" Relationship="teendoklistaModel.FK_felhasznalofeladat" FromRole="feladat" ToRole="felhasznalo" />
+        </EntityType>
+        <EntityType Name="felhasznalo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="felhasznalonev" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="jelszo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="feladat" Relationship="teendoklistaModel.FK_felhasznalofeladat" FromRole="felhasznalo" ToRole="feladat" />
         </EntityType>
         <Association Name="FK_felhasznalofeladat">
           <End Type="teendoklistaModel.felhasznalo" Role="felhasznalo" Multiplicity="1" />
@@ -95,15 +95,6 @@
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="teendoklistaModelStoreContainer" CdmEntityContainer="TeendokContext">
-          <EntitySetMapping Name="felhasznalo">
-            <EntityTypeMapping TypeName="teendoklistaModel.felhasznalo">
-              <MappingFragment StoreEntitySet="felhasznalo">
-                <ScalarProperty Name="jelszo" ColumnName="jelszo" />
-                <ScalarProperty Name="felhasznalonev" ColumnName="felhasznalonev" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="feladat">
             <EntityTypeMapping TypeName="teendoklistaModel.feladat">
               <MappingFragment StoreEntitySet="feladat">
@@ -112,6 +103,15 @@
                 <ScalarProperty Name="letrehozas_datum" ColumnName="letrehozas_datum" />
                 <ScalarProperty Name="szoveg" ColumnName="szoveg" />
                 <ScalarProperty Name="cim" ColumnName="cim" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="felhasznalo">
+            <EntityTypeMapping TypeName="teendoklistaModel.felhasznalo">
+              <MappingFragment StoreEntitySet="felhasznalo">
+                <ScalarProperty Name="jelszo" ColumnName="jelszo" />
+                <ScalarProperty Name="felhasznalonev" ColumnName="felhasznalonev" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -140,8 +140,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram DiagramId="6c362e82fb6d49928647aa6baa82f67f" Name="Diagram1">
-        <EntityTypeShape EntityType="teendoklistaModel.felhasznalo" Width="1.5" PointX="0.75" PointY="1.25" />
         <EntityTypeShape EntityType="teendoklistaModel.feladat" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="teendoklistaModel.felhasznalo" Width="1.5" PointX="0.75" PointY="1.25" />
         <AssociationConnector Association="teendoklistaModel.FK_felhasznalofeladat" />
       </Diagram>
     </Diagrams>
