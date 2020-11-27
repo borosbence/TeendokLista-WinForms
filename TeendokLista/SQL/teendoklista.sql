@@ -77,7 +77,6 @@ INSERT INTO `felhasznalo` (`id`, `felhasznalonev`, `jelszo`) VALUES
 ALTER TABLE `feladat`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `Id` (`id`),
-  ADD UNIQUE KEY `cim` (`cim`),
   ADD KEY `IX_FK_felhasznalofeladat` (`felhasznalo_id`);
 
 --
