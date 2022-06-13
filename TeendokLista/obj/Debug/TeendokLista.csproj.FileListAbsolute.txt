@@ -1,98 +1,19 @@
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\obj\Debug\TeendokLista.csprojAssemblyReference.cache
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\obj\Debug\TeendokLista.Properties.Resources.resources
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\obj\Debug\TeendokLista.Views.MainWindow.resources
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\obj\Debug\TeendokLista.csproj.GenerateResource.cache
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\bin\Debug\TeendokLista.exe.config
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\bin\Debug\TeendokLista.exe
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\bin\Debug\TeendokLista.pdb
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\bin\Debug\EntityFramework.dll
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\bin\Debug\EntityFramework.SqlServer.dll
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\bin\Debug\MySql.Data.EntityFramework.dll
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\bin\Debug\MySql.Data.dll
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\bin\Debug\Google.Protobuf.dll
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\bin\Debug\BouncyCastle.Crypto.dll
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\bin\Debug\Renci.SshNet.dll
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\bin\Debug\EntityFramework.xml
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\bin\Debug\EntityFramework.SqlServer.xml
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\bin\Debug\MySql.Data.EntityFramework.xml
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\bin\Debug\MySql.Data.xml
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\obj\Debug\TeendokLista.csproj.CopyComplete
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\obj\Debug\TeendokLista.exe
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\obj\Debug\TeendokLista.pdb
-H:\Vasvári\Programozási nyelvek\09\TeendokLista-master\TeendokLista\obj\Debug\TeendokLista.Views.Login.resources
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\bin\Debug\TeendokLista.exe.config
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\bin\Debug\TeendokLista.exe
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\bin\Debug\TeendokLista.pdb
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\bin\Debug\EntityFramework.dll
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\bin\Debug\MySql.Data.EntityFramework.dll
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\bin\Debug\MySql.Data.dll
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\bin\Debug\Google.Protobuf.dll
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\bin\Debug\Renci.SshNet.dll
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\bin\Debug\EntityFramework.xml
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\bin\Debug\MySql.Data.EntityFramework.xml
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\bin\Debug\MySql.Data.xml
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\obj\Debug\TeendokLista.csprojAssemblyReference.cache
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\obj\Debug\TeendokLista.Properties.Resources.resources
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\obj\Debug\TeendokLista.Views.Login.resources
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\obj\Debug\TeendokLista.Views.MainWindow.resources
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\obj\Debug\TeendokLista.csproj.GenerateResource.cache
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\obj\Debug\TeendokLista.csproj.CoreCompileInputs.cache
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\obj\Debug\TeendokLista.csproj.CopyComplete
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\obj\Debug\TeendokLista.exe
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\obj\Debug\TeendokLista.pdb
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\bin\Debug\en\TeendokLista.resources.dll
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\obj\Debug\TeendokLista.Properties.Resources.en.resources
-C:\Users\bo015833\Documents\Visual Studio 2017\Repos\Vasvári\TeendokLista\TeendokLista\obj\Debug\en\TeendokLista.resources.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\bin\Debug\TeendokLista.exe.config
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\bin\Debug\TeendokLista.exe
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\bin\Debug\TeendokLista.pdb
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\bin\Debug\en\TeendokLista.resources.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\bin\Debug\EntityFramework.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\bin\Debug\EntityFramework.SqlServer.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\bin\Debug\MySql.Data.EntityFramework.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\bin\Debug\MySql.Data.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\bin\Debug\Google.Protobuf.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\bin\Debug\BouncyCastle.Crypto.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\bin\Debug\Renci.SshNet.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\bin\Debug\EntityFramework.xml
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\bin\Debug\EntityFramework.SqlServer.xml
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\bin\Debug\MySql.Data.EntityFramework.xml
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\bin\Debug\MySql.Data.xml
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\obj\Debug\TeendokLista.csprojAssemblyReference.cache
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\obj\Debug\TeendokLista.Properties.Resources.resources
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\obj\Debug\TeendokLista.Views.Login.resources
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\obj\Debug\TeendokLista.Views.MainWindow.resources
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\obj\Debug\TeendokLista.Properties.Resources.en.resources
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\obj\Debug\TeendokLista.csproj.GenerateResource.cache
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\obj\Debug\en\TeendokLista.resources.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\obj\Debug\TeendokLista.csproj.CopyComplete
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\obj\Debug\TeendokLista.exe
-D:\Dokumentumok\Visual Studio 2019\Repos\TeendokLista\TeendokLista\obj\Debug\TeendokLista.pdb
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\obj\Debug\TeendokLista.csprojAssemblyReference.cache
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\obj\Debug\TeendokLista.Properties.Resources.resources
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\obj\Debug\TeendokLista.Properties.Resources.en.resources
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\obj\Debug\TeendokLista.csproj.GenerateResource.cache
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\obj\Debug\TeendokLista.csproj.CoreCompileInputs.cache
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\obj\Debug\TeendokLista.exe
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\obj\Debug\TeendokLista.pdb
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\bin\Debug\TeendokLista.exe.config
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\bin\Debug\TeendokLista.exe
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\bin\Debug\TeendokLista.pdb
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\bin\Debug\en\TeendokLista.resources.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\bin\Debug\EntityFramework.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\bin\Debug\EntityFramework.SqlServer.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\bin\Debug\MySql.Data.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\bin\Debug\Google.Protobuf.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\bin\Debug\BouncyCastle.Crypto.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\bin\Debug\Renci.SshNet.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\bin\Debug\EntityFramework.xml
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\bin\Debug\EntityFramework.SqlServer.xml
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\bin\Debug\MySql.Data.EntityFramework.xml
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\bin\Debug\MySql.Data.xml
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\obj\Debug\en\TeendokLista.resources.dll
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\obj\Debug\TeendokLista.csproj.CopyComplete
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\obj\Debug\TeendokLista.Views.LoginForm.resources
-D:\Dokumentumok\Visual Studio 2019\Repos\borosbence\TeendokLista\TeendokLista\obj\Debug\TeendokLista.Views.MainForm.resources
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\bin\Debug\TeendokLista.exe.config
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\bin\Debug\TeendokLista.exe
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\bin\Debug\TeendokLista.pdb
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\bin\Debug\en\TeendokLista.resources.dll
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\bin\Debug\EntityFramework.dll
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\bin\Debug\EntityFramework.SqlServer.dll
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\bin\Debug\EntityFramework.xml
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\bin\Debug\EntityFramework.SqlServer.xml
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\obj\Debug\TeendokLista.csproj.AssemblyReference.cache
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\obj\Debug\TeendokLista.Properties.Resources.resources
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\obj\Debug\TeendokLista.Views.LoginForm.resources
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\obj\Debug\TeendokLista.Views.MainForm.resources
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\obj\Debug\TeendokLista.Properties.Resources.en.resources
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\obj\Debug\TeendokLista.csproj.GenerateResource.cache
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\obj\Debug\TeendokLista.csproj.CoreCompileInputs.cache
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\obj\Debug\en\TeendokLista.resources.dll
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\obj\Debug\TeendokLista.csproj.CopyComplete
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\obj\Debug\TeendokLista.exe
+D:\Bence\Dokumentumok\Visual Studio 2022\Repos\borosbence\TeendokLista-WinForms\TeendokLista\obj\Debug\TeendokLista.pdb
